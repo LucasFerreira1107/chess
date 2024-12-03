@@ -6,12 +6,20 @@ import chess.Color;
 
 public class Rook extends ChessPiece{
 
+	private Color color;
+	
 	public Rook(Board board, Color color) {
 		super(board, color);
+		this.color = color;
 	}
 
 	@Override
 	public String toString() {
-		return "♖";
+		if(color == Color.WHITE) {
+			return "♖";
+		}
+		else {
+			return "♜";
+		}
 	}
 }
