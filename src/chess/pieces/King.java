@@ -7,21 +7,10 @@ import chess.Color;
 
 public class King extends ChessPiece {
 
-	private Color color;
-
 	public King(Board board, Color color) {
 		super(board, color);
-		this.color = color;
 	}
 
-	@Override
-	public String toString() {
-		if (color == Color.WHITE) {
-			return "♔";
-		} else {
-			return "♚";
-		}
-	}
 
 	private boolean canMove(Position position) {
 		ChessPiece p = (ChessPiece) getBoard().piece(position);
@@ -82,5 +71,14 @@ public class King extends ChessPiece {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 		return mat;
+	}
+	
+	@Override
+	public String toString() {
+		if (getColor() == Color.WHITE) {
+			return "♔";
+		} else {
+			return "♚";
+		}
 	}
 }
